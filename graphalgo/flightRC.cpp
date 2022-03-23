@@ -9,8 +9,6 @@ using std::cerr;
 using std::vector;
 using std::endl;
 
-
-
 void dfs(vector<unsigned int> *dfsmap, bool *tfmap, unsigned int start, unsigned int last){
     tfmap[start] = true;
     for (vector<unsigned int>::const_iterator it = dfsmap[start].cbegin(); it != dfsmap[start].cend(); ++it){
@@ -24,7 +22,7 @@ void dfs(vector<unsigned int> *dfsmap, bool *tfmap, unsigned int start, unsigned
 
 int main(){
 
-    const int maxN = 1e5 + 1;
+    int maxN = 1e5 + 1;
 
     //PART1: Parse n and m
     unsigned int n, m;
@@ -48,21 +46,18 @@ int main(){
     bool fwtf[maxN] = {false};
     bool rvtf[maxN] = {false};
     unsigned int rdnum = rand()%n+1;
-    cout << rdnum;
     dfs(fwmap, fwtf, rdnum, 0);
     dfs(rvmap, rvtf, rdnum, 0);
-    cout << "finished";
     //PART4: Test the result;
     for (unsigned int i = 1; i < n+1; i++){
-        cout << "start" << endl;
         if (!fwtf[i]){
             cout << "NO" << endl;
-            cout << rdnum << i << endl;
+            cout << rdnum << " "<< i << endl;
             return 0;
         }
         if (!rvtf[i]){
             cout << "NO" << endl;
-            cout << i << rdnum << endl;
+            cout << i << " " << rdnum << endl;
             return 0;
         }
     }

@@ -5,7 +5,7 @@
 using std::cin;
 using std::cout;
 
-void weird(int n){
+void weird(unsigned long n){
     cout << n << " ";
     if (n == 1){
         return;
@@ -20,7 +20,7 @@ void weird(int n){
 }
 
 int main(){
-    int n = 0;
+    unsigned long n = 0;
     cin >> n;
     weird(n);
     return 0;

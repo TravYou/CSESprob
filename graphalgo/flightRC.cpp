@@ -22,7 +22,7 @@ void dfs(vector<unsigned int> *dfsmap, bool *tfmap, unsigned int start, unsigned
 
 int main(){
 
-    int maxN = 1e5 + 1;
+    const int maxN = 1e5 + 1;
 
     //PART1: Parse n and m
     unsigned int n, m;

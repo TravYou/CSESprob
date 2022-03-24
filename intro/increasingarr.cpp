@@ -22,4 +22,5 @@ int main(){
     }
     cout << step;
     return 0;
+    
 }
